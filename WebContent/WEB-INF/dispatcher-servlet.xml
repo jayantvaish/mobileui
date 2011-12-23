@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="viewResolver" class="org.springframework.web.servlet.view.XmlViewResolver" />
+
+	<bean id="beanNameUrlMapping"
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+
+	<bean name="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/data.json">androidController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="androidController"
+		class="com.intalio.cloud.smartphone.android.AndroidController">
+		<property name="accountBO" ref="accountBO" />
+		<property name="mapBO" ref="mapBO" />
+		<property name="topicBO" ref="topicBO" />
+		<property name="pageBO" ref="pageBO" />
+		<property name="snippetBO" ref="snippetBO" />
+		<property name="foldersBO" ref="folderBO" />
+		<property name="genericBO" ref="genericBO" />
+		<property name="contactsBO" ref="contactBO" />
+		<property name="documentsBO" ref="documentBO" />
+		<property name="contractsBO" ref="contractBO" />
+		<property name="opportunitiesBO" ref="opportunityBO" />
+		<property name="invoicesBO" ref="invoiceBO" />
+		<property name="leadsBO" ref="leadsBO" />
+		<property name="productsBO" ref="productsBO" />
+		<property name="competitorsBO" ref="competitorsBO" />
+		<property name="pricelistsBO" ref="pricelistsBO" />
+		<property name="quotesBO" ref="quotesBO" />
+		<property name="businessProcessBO" ref="businessProcessBO" />
+		<property name="assetsBO" ref="assetsBO"/>
+		<property name="casesBO" ref="casesBO"/>
+		<property name="solutionsBO" ref="solutionsBO"/>
+		<property name="reportsBO" ref="reportsBO"/>
+		<property name="trackingsBO" ref="trackingsBO"/>
+		<property name="kpiBO" ref="kpiBO"/>
+		<property name="slaBO" ref="slaBO"/>
+		<property name ="marketingListsBO" ref ="marketingListsBO"/>
+		<property name ="marketingCampaignsBO" ref ="marketingCampaignsBO"/>
+		<property name="eventsBO" ref="eventsBO" />
+		<property name="tasksBO" ref="tasksBO" />
+		<property name="projectsBO" ref="projectsBO" />
+		<property name="processInstancesBO" ref="processInstancesBO" />
+	</bean>
+
+
+	<bean id="intalioDS" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+		<property name="url" value="jdbc:postgresql://platinum.cloud.intalio.com/intalio"></property>
+		<property name="username" value="veresh"></property>
+		<property name="password" value="veresh"></property>
+	</bean>
+
+	<bean id="AndroidMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="configLocation" value="classpath:SqlMapConfig.xml" />
+	</bean>
+
+	<bean id="accountDAO" class="com.intalio.android.DAO.AccountsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="mapDAO" class="com.intalio.android.DAO.MapsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="topicDAO" class="com.intalio.android.DAO.TopicsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="pageDAO" class="com.intalio.android.DAO.PagesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="snippetDAO" class="com.intalio.android.DAO.SnippetsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	
+	<bean id="foldersDAO" class="com.intalio.android.DAO.FoldersDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="genericDAO" class="com.intalio.android.DAO.GenericDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="contactsDAO" class="com.intalio.android.DAO.ContactsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="documentsDAO" class="com.intalio.android.DAO.DocumentsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="contractsDAO" class="com.intalio.android.DAO.ContractsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="invoicesDAO" class="com.intalio.android.DAO.InvoicesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="opportunitiesDAO" class="com.intalio.android.DAO.OpportunitiesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="leadsDAO" class="com.intalio.android.DAO.LeadsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="productsDAO" class="com.intalio.android.DAO.ProductsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="competitorsDAO" class="com.intalio.android.DAO.CompetitorsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="pricelistsDAO" class="com.intalio.android.DAO.PriceListsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="quotesDAO" class="com.intalio.android.DAO.QuotesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+
+	<bean id="businessProcessDAO" class="com.intalio.android.DAO.BusinessProcessesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="assetsDAO" class="com.intalio.android.DAO.AssetsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="casesDAO" class="com.intalio.android.DAO.CasesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="solutionsDAO" class="com.intalio.android.DAO.SolutionsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="reportsDAO" class="com.intalio.android.DAO.ReportsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="trackingsDAO" class="com.intalio.android.DAO.TrackingsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="KPIDAO" class="com.intalio.android.DAO.KPIDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="SLADAO" class="com.intalio.android.DAO.SLADAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="marketingListsDAO" class="com.intalio.android.DAO.MarketingListsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="marketingCampaignsDAO" class="com.intalio.android.DAO.MarketingCampaignsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="eventsDAO" class="com.intalio.android.DAO.EventsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="tasksDAO" class="com.intalio.android.DAO.TasksDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="projectsDAO" class="com.intalio.android.DAO.ProjectsDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="processInstancesDAO" class="com.intalio.android.DAO.ProcessInstancesDAO">
+		<property name="dataSource" ref="intalioDS" />
+		<property name="sqlMapClient" ref="AndroidMapClient" />
+	</bean>
+	<bean id="accountBO" class="com.intalio.android.controller.AccountsBO">
+		<property name="accountDAO" ref="accountDAO" />
+	</bean>
+	<bean id="mapBO" class="com.intalio.android.controller.MapsBO">
+		<property name="mapsDAO" ref="mapDAO" />
+	</bean>
+	<bean id="topicBO" class="com.intalio.android.controller.TopicsBO">
+		<property name="topicsDAO" ref="topicDAO" />
+	</bean>
+	<bean id="pageBO" class="com.intalio.android.controller.PagesBO">
+		<property name="pagesDAO" ref="pageDAO" />
+	</bean>
+	<bean id="snippetBO" class="com.intalio.android.controller.SnippetsBO">
+		<property name="snippetsDAO" ref="snippetDAO" />
+	</bean>
+	<bean id="folderBO" class="com.intalio.android.controller.FoldersBO">
+		<property name="foldersDAO" ref="foldersDAO" />
+	</bean>
+	<bean id="genericBO" class="com.intalio.android.controller.GenericBO">
+		<property name="genericDAO" ref="genericDAO" />
+	</bean>
+	<bean id="contactBO" class="com.intalio.android.controller.ContactsBO">
+		<property name="contactsDAO" ref="contactsDAO" />
+	</bean>
+	<bean id="documentBO" class="com.intalio.android.controller.DocumentsBO">
+		<property name="documentsDAO" ref="documentsDAO" />
+	</bean>
+	<bean id="contractBO" class="com.intalio.android.controller.ContractsBO">
+		<property name="contractsDAO" ref="contractsDAO" />
+	</bean>
+
+	<bean id="opportunityBO" class="com.intalio.android.controller.OpportunitiesBO">
+		<property name="opportunitiesDAO" ref="opportunitiesDAO" />
+	</bean>
+
+	<bean id="invoiceBO" class="com.intalio.android.controller.InvoicesBO">
+		<property name="invoicesDAO" ref="invoicesDAO" />
+	</bean>
+
+	<bean id="leadsBO" class="com.intalio.android.controller.LeadsBO">
+		<property name="leadsDAO" ref="leadsDAO" />
+	</bean>
+	<bean id="productsBO" class="com.intalio.android.controller.ProductsBO">
+		<property name="productsDAO" ref="productsDAO" />
+	</bean>
+
+	<bean id="competitorsBO" class="com.intalio.android.controller.CompetitorsBO">
+		<property name="competitorsDAO" ref="competitorsDAO" />
+	</bean>
+
+	<bean id="pricelistsBO" class="com.intalio.android.controller.PriceListsBO">
+		<property name="pricelistsDAO" ref="pricelistsDAO" />
+	</bean>
+	<bean id="quotesBO" class="com.intalio.android.controller.QuotesBO">
+		<property name="quotesDAO" ref="quotesDAO" />
+	</bean> 
+	<bean id="businessProcessBO" class="com.intalio.android.controller.BusinessProcessesBO">
+		<property name="businessProcessDAO" ref="businessProcessDAO" />
+	</bean>
+	<bean id="assetsBO" class="com.intalio.android.controller.AssetsBO">
+		<property name="assetsDAO" ref="assetsDAO" />
+	</bean>
+	<bean id="casesBO" class="com.intalio.android.controller.CasesBO">
+		<property name="casesDAO" ref="casesDAO" />
+	</bean>
+	<bean id="solutionsBO" class="com.intalio.android.controller.SolutionsBO">
+		<property name="solutionsDAO" ref="solutionsDAO" />
+	</bean>
+	<bean id="reportsBO" class="com.intalio.android.controller.ReportsBO">
+		<property name="reportsDAO" ref="reportsDAO" />
+	</bean>
+	<bean id="trackingsBO" class="com.intalio.android.controller.TrackingsBO">
+		<property name="trackingsDAO" ref="trackingsDAO" />
+	</bean>
+	<bean id="kpiBO" class="com.intalio.android.controller.KPIBO">
+		<property name="KPIDAO" ref="KPIDAO" />
+	</bean>
+	<bean id="slaBO" class="com.intalio.android.controller.SLABO">
+		<property name="SLADAO" ref="SLADAO" />
+	</bean>
+	<bean id="marketingListsBO" class="com.intalio.android.controller.MarketingListsBO">
+		<property name="marketingListsDAO" ref="marketingListsDAO" />
+	</bean>
+	<bean id="marketingCampaignsBO" class="com.intalio.android.controller.MarketingCampaignsBO">
+		<property name="marketingCampaignsDAO" ref="marketingCampaignsDAO" />
+	</bean>
+	<bean id="eventsBO" class="com.intalio.android.controller.EventsBO">
+		<property name="eventsDAO" ref="eventsDAO" />
+	</bean>
+	<bean id="tasksBO" class="com.intalio.android.controller.TasksBO">
+		<property name="tasksDAO" ref="tasksDAO" />
+	</bean>
+	<bean id="projectsBO" class="com.intalio.android.controller.ProjectsBO">
+		<property name="projectsDAO" ref="projectsDAO" />
+	</bean>
+	<bean id="processInstancesBO" class="com.intalio.android.controller.ProcessInstancesBO">
+		<property name="processInstancesDAO" ref="processInstancesDAO" />
+	</bean>
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:SqlMapConfig.xml</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="intalioDS" />
+		</property>
+	</bean>
+
+
+</beans>

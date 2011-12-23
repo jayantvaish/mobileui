@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getTasks" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(io_uuid AS varchar(100)) as xid ,
+				io_name as name,
+				io_start_date as "Start Date",
+				io_due_date as "Due Date"
+		from
+				io_task
+		order by
+				io_name
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getTaskByIDMain" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				task.io_name as "Name",
+				usr.io_full_name as "Owner",
+				<!-- CAST(task.io_status[1] AS varchar(100)) as "Status", -->
+				task.io_updated_on as "Updated On"
+				
+		from
+				
+				io_task as task
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = task.io_owner)
+				
+		where
+				task.io_uuid = #id#::uuid 
+	</select>
+	<select id="getTaskByIDStandard" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(task.io_uuid AS varchar(100)) as "Record ID",
+				task.io_path as "Path",
+				folder.io_name as "Folder",
+				app.io_name as "Application",
+				pack.io_name as "Package",
+				rel.io_name as "Release",
+				<!-- CAST(task.io_release_status[1] AS varchar(100)) as "Release Status", -->
+				task.io_tags as "Tags",
+				task.io_description as "Description",
+				task.io_documentation as "Documentation",
+				task.io_notes as "Notes",
+				usr.io_full_name as "Created By",
+				usr1.io_full_name as "Updated By",
+				task.io_created_on as "Created On",
+				task.io_active as "Active",
+				task.io_deleted as "Deleted",
+				task.io_private as "Private"
+				<!-- ,CAST(task.io_custodian AS varchar(100)) as "Custodian", -->
+		from
+				io_task as task
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = task.io_created_by)
+					LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = task.io_updated_by)
+					LEFT OUTER JOIN io_folder as folder
+						ON (folder.io_uuid = task.io_folder)
+					LEFT OUTER JOIN io_application as app
+						ON (app.io_uuid = task.io_application)
+					LEFT OUTER JOIN io_package as pack
+						ON (pack.io_uuid = task.io_package)
+					LEFT OUTER JOIN io_release as rel
+						ON (rel.io_uuid = task.io_release)
+		where
+				task.io_uuid = #id#::uuid 
+	</select>
+	<select id="getTaskByIDSpecific" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select 
+				<!-- CAST(task.io_decision[1] AS varchar(100)) as "Decision", -->
+				<!-- CAST(task.io_related_to[1] AS varchar(100)) as "Related To", -->
+				project.io_name as "Related Project",
+				usr.io_full_name as "Assigned To",
+				usr1.io_full_name as "Requested Assignee",
+				task.io_due_date as "Due date",
+				task.io_start_date as "Start date",
+				task.io_recurring as "Recurring",
+				<!-- CAST(task.io_recurring_task AS varchar(100)) as "Recurring Task", -->
+				<!-- CAST(task.io_recurrence_type[1] AS varchar(100)) as "Recurrence Type", -->
+				task.io_recurrence_date as "Recurrence Date",
+				<!-- CAST(task.io_recurrence_day[1] AS varchar(100)) as "Recurrence Day", -->
+				<!-- CAST(task.io_recurrence_weekdays[1] AS varchar(100)) as "Recurrence Weekdays", -->
+				task.io_recurrence_frequency as "Recurrence Frequency",
+				task.io_recurrence_start as "Recurrence Start",
+				task.io_recurrence_end as "Recurrence End",
+				task.io_recurrence_occurences as "Recurrence Occurences",
+				task.io_recurrence_summary as "Recurrence Summary",
+				<!-- CAST(task.io_reminder[1] AS varchar(100)) as "Reminder", -->
+				<!-- CAST(task.io_priority[1] AS varchar(100)) as "Priority", -->
+				CAST(task.io_estimated_time AS varchar(100)) as "Estimated Time",
+				task.io_percent_done as "Percent Done",
+				CAST(task.io_time_spent AS varchar(100)) as "Time Spent",
+				CAST(task.io_time_remaining AS varchar(100)) as "Time Remaining",
+				CAST(task.io_completion_time AS varchar(100)) as "Completion Time"
+		from
+				io_task as task
+				LEFT OUTER JOIN io_project as project
+						ON (project.io_uuid = task.io_related_project)
+				LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = task.io_assigned_to)
+				LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = task.io_requested_assignee)
+				
+		where
+				task.io_uuid = #id#::uuid				
+	</select>	
+</sqlMap>

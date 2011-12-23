@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getContracts" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(io_uuid AS varchar(100)) as xid , io_name as name
+		from
+				io_contract
+		order by
+				io_end_date
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getContractsOnIDMain" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				cont.io_name as "Name",
+				usr.io_full_name as "Owner",
+				cont.io_updated_on as "Updated On"
+				
+		from
+				
+				io_contract as cont
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = cont.io_owner)
+				
+		where
+				cont.io_uuid = #id#::uuid
+	</select>
+	<select id="getContractsOnIDStandard" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+			select
+				CAST(cont.io_uuid AS varchar(100)) as "ID",
+				cont.io_path as "Path",
+				folder.io_name as "Folder",
+				app.io_name as "Application",
+				pack.io_name as "Package",
+				rel.io_name as "Release",
+				cont.io_tags as "Tags",
+				cont.io_description as "Description",
+				cont.io_documentation as "Documentation",
+				cont.io_notes as "Notes",
+				usr.io_full_name as "Created By",
+				usr1.io_full_name as "Updated By",
+				cont.io_created_on as"Created On",
+				acct.io_name as "Custodian"
+		from
+				io_contract as cont
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = cont.io_created_by)
+					LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = cont.io_updated_by)
+					LEFT OUTER JOIN io_folder as folder
+						ON (folder.io_uuid = cont.io_folder)
+					LEFT OUTER JOIN io_application as app
+						ON (app.io_uuid = cont.io_application)
+					LEFT OUTER JOIN io_package as pack
+						ON (pack.io_uuid = cont.io_package)
+					LEFT OUTER JOIN io_release as rel
+						ON (rel.io_uuid = cont.io_release)
+					LEFT OUTER JOIN io_account as acct
+						ON (acct.io_uuid = cont.io_custodian)
+		where
+				cont.io_uuid = #id#::uuid 
+	</select>
+	<select id="getContractsOnIDSpecific" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+			
+		select
+				contract.io_reference_code as "Reference Code",
+				quot.io_name as "Quote",
+				opp.io_name as "opportunity",
+				acct.io_name as "Account",
+				contact.io_name as "Primary Contact",
+				sla.io_name as "Service Level",
+				contract.io_start_date as "Start Date",
+				contract.io_end_date as "End Date",
+				contract.io_term as "Term",
+				contract.io_billing_street[1] as "Billing Street",
+				contract.io_shipping_street[1] as "Shipping Street",
+				contract.io_initial_fee_discount as "Initial Fee Discount",
+				contract.io_discounted_initial_fee[1] as "Discounted Initial Fee",
+				contract.io_initial_fee_taxes[1] as "Initial Fee Taxes",
+				contract.io_total_initial_fee[1] as "Total Initial Fee",
+				contract.io_recurring_fee_discount as "Recurring Fee Discount",
+				contract.io_discounted_recurring_fee[1] as "Discounted Recurring Fee",
+				contract.io_recurring_fee_taxes[1] as "Recurring Fee Taxes",
+				contract.io_total_recurring_fee[1] as "Total Recurring Fee",
+				cont.io_name as "Company Signed By",
+				contract.io_company_signed_date as "Company Signed Date",
+				cont1.io_name as "Customer Signed By",
+				contract.io_customer_signed_date as "Customer Signed Date",
+				contract.io_delivery_date as "Delivery Date"
+				
+				
+		From
+				io_contract as contract
+					LEFT OUTER JOIN io_account as acct
+					ON (acct.io_uuid = contract.io_account)
+					LEFT OUTER JOIN io_quote as quot
+					ON(quot.io_uuid = contract.io_quote)
+					LEFT OUTER JOIN io_opportunity as opp
+					ON(opp.io_uuid = contract.io_opportunity)
+					LEFT OUTER JOIN io_contact as contact
+					ON(contact.io_uuid = contract.io_primary_contact)
+					LEFT OUTER JOIN io_contact as cont
+					ON(cont.io_uuid = contract.io_company_signed_by)
+					LEFT OUTER JOIN io_contact as cont1
+					ON(cont1.io_uuid = contract.io_customer_signed_by)
+					LEFT OUTER JOIN io_service_level_agreement as sla
+					ON(sla.io_uuid = contract.io_service_level[1]::uuid)
+					
+		where
+				contract.io_uuid = #id#::uuid 	
+	</select>
+	<select id="getContractsOnAccountID" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				con.xid , con.title as "name"
+		from
+				xrm_contract as con
+		where
+				con.customerid = #id#
+		order by
+				xid
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+
+</sqlMap>  

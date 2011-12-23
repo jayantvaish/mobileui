@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getPages" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(io_uuid AS varchar(100)) as xid, io_title as name
+		from
+				io_page
+		order by
+				io_title
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getPagesByIDMain" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+
+                page.io_title as "Title",
+                usr.io_full_name as "Owner",
+                rel.io_name as "Release Status",
+                page.io_updated_on as "Updated On"				
+		from
+				io_page as page
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = page.io_owner)
+					LEFT OUTER JOIN io_release as rel
+						ON(rel.io_uuid = page.io_release_status[1])
+		where
+				page.io_uuid = #id#::uuid
+	</select>
+	<select id="getPagesByIDStandard" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+
+                CAST(page.io_uuid as VARCHAR(100)) as "Record ID",
+                page.io_path as "Path",
+                fold.io_name as "Folder",
+                app.io_name as "Application",
+                pack.io_name as "Package",
+                rel.io_name as "Release",
+                usr.io_full_name as "Created By",
+                usr1.io_full_name as "Updated By",
+                page.io_created_on as "Created On",
+                page.io_tags as "Tags",
+                page.io_description as "Description",
+                page.io_documentation as "Documentation",
+                page.io_notes as "Notes"				
+		from
+				io_page as page
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = page.io_created_by)
+					LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = page.io_updated_by)
+					LEFT OUTER JOIN io_folder as fold
+						ON (fold.io_uuid = page.io_folder)
+					LEFT OUTER JOIN io_package as pack
+						ON (pack.io_uuid = page.io_package)
+					LEFT OUTER JOIN io_application as app
+						ON (app.io_uuid = page.io_application)
+					LEFT OUTER JOIN io_release as rel
+						ON (rel.io_uuid = page.io_release)
+					
+		where
+				page.io_uuid = #id#::uuid
+	</select>
+	<select id="getPagesByIDSpecific" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+			page.io_breadcrumb as "Breadcrumb",
+			page.io_slug as "SLUG",
+			page.io_url as "URL",
+			page1.io_title as "Parent Page",
+			lay.name as "Layout",
+			page.io_keywords as "Keywords",
+			page.io_content[1] as "Content",
+			page.io_expired_on as "Expired ON"
+		
+		FROM
+			io_page as page
+			LEFT OUTER JOIN io_page as page1
+			ON(page1.io_uuid = page.io_parent_page)
+			LEFT OUTER JOIN io_layout as lay
+			ON(lay.io_uuid = page.io_layout)
+		
+		where 
+			page.io_uuid = #id#::uuid
+	</select>
+	<select id="getPagesByAccountID" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				con.xid , con.fullname as "name" ,con.mobilephone as "Mobile No" ,
+				con.emailaddress1 as "Email ID" 
+		from
+				xrm_contact as con
+		where
+				con.parentcust = #id#
+		order by
+				xid
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+</sqlMap>

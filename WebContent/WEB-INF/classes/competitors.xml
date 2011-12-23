@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getCompetitors" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				xid,name
+		from
+				xrm_competitor
+		order by
+				name
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getCompetitorsByID" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				comp.xid as "XID", comp.name as "Name", comp.reportedrevenue as "Reported Revenue",
+				comp.websiteurl as "WebSite URL",
+				comp.city as "City", comp.state as "State",
+				curr.currencyname as "Currency", comp.overview as "Overview"
+		from
+				xrm_competitor as comp
+					LEFT OUTER JOIN xrm_currency as curr
+						ON (curr.xid = comp.currency)
+		where
+				comp.xid = #id#
+	</select>
+</sqlMap>
+

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getLeads" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(io_uuid AS varchar(100)) as xid ,
+				io_name as name
+		from
+				io_lead
+		order by
+				io_name
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getLeadsByIDMain" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+
+                lead.io_name as "Name",
+                usr.io_full_name as "Owner",
+                lead.io_updated_on as "Updated On"				
+		from
+				io_lead as lead
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = lead.io_owner)
+		where
+				lead.io_uuid = #id#::uuid
+	</select>
+	<select id="getLeadsByIDStandard" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+
+                CAST(lead.io_uuid as VARCHAR(100)) as "Record ID",
+                lead.io_path as "Path",
+                fold.io_name as "Folder",
+                app.io_name as "Application",
+                pack.io_name as "Package",
+                rel.io_name as "Release",
+                usr.io_full_name as "Created By",
+                usr1.io_full_name as "Updated By",
+                lead.io_created_on as "Created On",
+                lead.io_tags as "Tags",
+                lead.io_description as "Description",
+                lead.io_documentation as "Documentation",
+                lead.io_notes as "Notes"				
+		from
+				io_lead as lead
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = lead.io_created_by)
+					LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = lead.io_updated_by)
+					LEFT OUTER JOIN io_folder as fold
+						ON (fold.io_uuid = lead.io_folder)
+					LEFT OUTER JOIN io_package as pack
+						ON (pack.io_uuid = lead.io_package)
+					LEFT OUTER JOIN io_application as app
+						ON (app.io_uuid = lead.io_application)
+					LEFT OUTER JOIN io_release as rel
+						ON (rel.io_uuid = lead.io_release)
+					
+		where
+				lead.io_uuid = #id#::uuid
+	</select>
+	<select id="getLeadsByIDSpecific" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		 select
+
+               <!--  lead.io_salutation[1] as "Salutation",
+                lead.io_industry[1] as "Industry", -->
+                lead.io_first_name as "First Name",
+                lead.io_last_name as "Last Name",
+                lead.io_organization as "Organization",
+                
+                lead.io_title as "Title",
+                status.io_name as "Status",
+                
+                <!--lead.io_disqualification_reason[1] as "Disqualification ..",
+                lead.io_rating[1] as "Rating",
+                 lead.io_city as "City", 
+                lead.io_state_province as "State/Province",
+                lead.io_postal_code as "ZIP/Postal Code",
+                lead.io_country as "Country", -->
+                lead.io_phone as "Phone",
+                
+                lead.io_email as "E mail",
+                lead.io_website as "WebSite",
+                lead.io_number_of_employees as "Number of Employee",
+               <!-- lead.io_street as "Street",  -->
+                lead.io_annual_revenue[1] as "Annual Revenue",
+                lead.io_mobile as "Mobile",
+                lead.io_home_phone as "Home Phone",
+                
+                lead.io_fax as "FAX",
+                lead.io_facebook_id as "Facebook ID",
+                lead.io_linkedin_id as "LinkedIn ID",
+                lead.io_skype_id as "Skype_ID",
+                lead.io_twitter_id as "Twitter ID",
+               <!-- lead.io_preferred_method[1] as "Preferred Method",
+				lead.io_preferred_time[1] as "Preferred Time",
+				lead.io_preferred_day[1] as "Preferred Day",  --> 
+				lang.io_name as "Preferred Language"
+                				
+		from
+				io_lead as lead
+				LEFT OUTER JOIN io_status as status
+				ON(status.io_uuid = lead.io_status[1]::uuid)
+				LEFT OUTER JOIN io_language as lang
+				ON(lang.io_uuid = lead.io_preferred_language)
+					
+		where
+				lead.io_uuid = #id#::uuid
+	</select>
+</sqlMap>
+

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getAccounts" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(io_uuid AS varchar(100)) as xid , io_name as name
+		from
+				io_account
+		order by
+				io_name
+		OFFSET
+				#startFrom#
+		LIMIT
+				#upto#
+	</select>
+	<select id="getAccountByIDMain" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				acct.io_name as "Name",
+				usr.io_full_name as "Owner",
+				acct.io_updated_on as "Updated On"
+		from
+				io_account as acct
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = acct.io_owner)
+				
+		where
+				acct.io_uuid = #id#::uuid 
+	</select>
+	<select id="getAccountByIDStandard" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				CAST(acct.io_uuid AS varchar(100)) as "ID",
+				acct.io_path as "Path",
+				folder.io_name as "Folder",
+				app.io_name as "Application",
+				pack.io_name as "Package",
+				rel.io_name as "Release",
+				acct.io_tags as "Tags",
+				acct.io_description as "Description",
+				acct.io_documentation as "Documentation",
+				acct.io_notes as "Notes",
+				usr.io_full_name as "Created By",
+				usr1.io_full_name as "Updated By",
+				acct.io_created_on as"Created On"
+		from
+				io_account as acct
+					LEFT OUTER JOIN io_user as usr
+						ON (usr.io_uuid = acct.io_created_by)
+					LEFT OUTER JOIN io_user as usr1
+						ON (usr1.io_uuid = acct.io_updated_by)
+					LEFT OUTER JOIN io_folder as folder
+						ON (folder.io_uuid = acct.io_folder)
+					LEFT OUTER JOIN io_application as app
+						ON (app.io_uuid = acct.io_application)
+					LEFT OUTER JOIN io_package as pack
+						ON (pack.io_uuid = acct.io_package)
+					LEFT OUTER JOIN io_release as rel
+						ON (rel.io_uuid = acct.io_release)
+		where
+				acct.io_uuid = #id#::uuid 
+	</select>
+	<select id="getAccountByIDSpecific" resultClass="java.util.LinkedHashMap"
+		parameterClass="java.util.Map">
+		select
+				acct1.io_name as  "Parent Account",
+			<!--acct.io_type[1] as "Type",
+				acct.io_industry[1] as "Industry", -->
+				isic.io_title as "ISIC Industry",
+				naics.io_title as "NAICS Industry",
+				cont.io_name as "Primary Contact",
+				acct.io_phone as "Phone",
+				acct.io_fax as "FAX",
+				acct.io_website as "WebSite",
+			<!-- acct.io_billing_city as "Billing City",
+				acct.io_billing_state_province as "Billing State",
+				acct.io_billing_postal_code as "Postal Code",
+				acct.io_billing_country as "Billing Country",
+				acct.io_shipping_city as "Shipping City",
+				acct.io_shipping_state_province as "Shipping State",
+				acct.io_shipping_postal_code as "Shipping ZIP",
+				acct.io_billing_street as "Billing Street",
+				acct.io_shipping_street as "Shipping Street",
+				acct.io_shipping_country as "Shipping Country",
+				acct.io_employees as "Number of Employee", -->	
+				acct.io_account_number as "Account Number",
+				acct.io_ticker_symbol as "Ticker Symbol",
+				acct.io_forbes_rank as "Forbes Rank",
+				acct.io_fortune_rank as "Fortune Rank",
+				acct.io_annual_revenue[1] as "Annual_revenue",
+				acct.io_annual_profits[1] as "Annual Profit",
+				acct.io_assets[1] as "Assets",
+				acct.io_market_value[1] as "market Value",
+				<!-- acct.io_rating[1] as "Rating",
+				acct.io_satisfaction_level[1] as "Satisfaction Level",
+				acct.io_payment_terms[1] as "Payment Terms", -->
+				acct.io_credit_limit[1] as "Credit Limit",
+				lead.io_name as "io_originating_lead"
+		from
+				io_account as acct
+					LEFT OUTER JOIN io_contact as cont
+						ON (cont.io_uuid = acct.io_primary_contact)
+					LEFT OUTER JOIN io_isic_industry as isic
+						ON (isic.io_uuid = acct.io_isic_industry)
+					LEFT OUTER JOIN io_naics_industry as naics
+						ON (naics.io_uuid = acct.io_naics_industry)
+					LEFT OUTER JOIN io_account as acct1
+						ON (acct1.io_uuid = acct.io_parent_account)
+					LEFT OUTER JOIN io_lead as lead	
+						ON(lead.io_uuid = acct.io_originating_lead)
+		where
+				acct.io_uuid = #id#::uuid 
+	</select>
+</sqlMap>
+

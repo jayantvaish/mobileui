@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<sqlMap resource="sla.xml" />
+	<sqlMap resource="documents.xml" />
+	<sqlMap resource="maps.xml"/>
+	<sqlMap resource="topics.xml"/>
+	<sqlMap resource="pages.xml"/>
+	<sqlMap resource="snippets.xml"/>
+	<sqlMap resource="marketinglists.xml" />
+	<sqlMap resource="marketingcampaigns.xml" />
+	<sqlMap resource="accounts.xml" />
+	<sqlMap resource="folders.xml" />
+	<sqlMap resource="contacts.xml" />
+	<sqlMap resource="contracts.xml" />
+	<sqlMap resource="invoices.xml" />
+	<sqlMap resource="opportunities.xml" />
+	<sqlMap resource="leads.xml" />
+	<sqlMap resource="products.xml" />
+	<sqlMap resource="competitors.xml" />
+	<sqlMap resource="pricelists.xml" />
+	<sqlMap resource="quotes.xml" />
+	<sqlMap resource="businessprocess.xml" />
+	<sqlMap resource="generic.xml" />
+	<sqlMap resource="assets.xml" />
+	<sqlMap resource="cases.xml" />
+	<sqlMap resource="solutions.xml" />
+	<sqlMap resource="reports.xml" />
+	<sqlMap resource="trackings.xml" />
+	<sqlMap resource="kpi.xml" />
+	<sqlMap resource="events.xml" />
+	<sqlMap resource="tasks.xml" />
+	<sqlMap resource="projects.xml" />
+	<sqlMap resource="processinstances.xml" />
+</sqlMapConfig>

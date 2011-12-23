@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QueryMap">
+
+	<select id="getObjectCount" resultClass="java.util.LinkedHashMap" parameterClass="java.util.Map">
+		
+		SELECT 
+		    (SELECT COUNT(*) FROM   io_lead) AS "leads",
+    		(SELECT COUNT(*) FROM   io_opportunity) AS "opportunities",
+       		(SELECT COUNT(*) FROM   io_account) AS "accounts",
+		    (SELECT COUNT(*) FROM   io_contact) AS "contacts",
+		    (SELECT COUNT(*) FROM   io_product) AS "products",
+		    (SELECT COUNT(*) FROM   io_quote) AS "quotes" ,
+            (SELECT COUNT(*) FROM   io_contract) AS "contracts",
+		    (SELECT COUNT(*) FROM   io_invoice) AS "invoices",
+		    (SELECT COUNT(*) FROM   io_task) AS "tasks",
+		    (SELECT COUNT(*) FROM   io_event) AS "events",
+		    (SELECT COUNT(*) FROM   io_project) AS "projects",
+		    (SELECT COUNT(*) FROM   io_business_process) AS "businessprocess",
+		    (SELECT COUNT(*) FROM   io_process_instance) AS "processinstance",
+		    (SELECT COUNT(*) FROM   io_folder) AS "folders",
+		    (SELECT COUNT(*) FROM   io_document) AS "documents",
+		    (SELECT COUNT(*) FROM   io_map) AS "maps",
+		    (SELECT COUNT(*) FROM   io_topic) AS "topics",
+		    (SELECT COUNT(*) FROM   io_page) AS "pages",
+		    (SELECT COUNT(*) FROM   io_marketing_list) AS "marketinglists",
+		    (SELECT COUNT(*) FROM   io_marketing_campaign) AS "marketingcampaigns",
+		    (SELECT COUNT(*) FROM   io_asset) AS "assets",
+		    (SELECT COUNT(*) FROM   io_case) AS "cases",
+		    (SELECT COUNT(*) FROM   io_solution) AS "solutions",
+		    (SELECT COUNT(*) FROM   io_report) AS "reports",
+		    (SELECT COUNT(*) FROM   io_tracking) AS "trackings",
+		    (SELECT COUNT(*) FROM   io_key_performance_indicator) AS "keyperformanceindicators",
+		    (SELECT COUNT(*) FROM   io_service_level_agreement) AS "servicelevelagreements"
+		    
+		 
+	</select>
+
+</sqlMap>
+
+<!--   <isEqual property="objname" compareValue="count"> -->
