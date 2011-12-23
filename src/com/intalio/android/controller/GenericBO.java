@@ -1,6 +1,7 @@
 package com.intalio.android.controller;
 
 import java.util.List;
+
 import com.intalio.android.DAO.GenericDAO;
 
 /**

@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.intalio.android.DAO.CompetitorsDAO;
-import com.intalio.android.DAO.ProductsDAO;
 
 /**
  * Main Business Object class for competitors

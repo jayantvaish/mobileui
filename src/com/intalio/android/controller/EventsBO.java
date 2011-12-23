@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.intalio.android.DAO.AccountsDAO;
 import com.intalio.android.DAO.EventsDAO;
 
 public class EventsBO {

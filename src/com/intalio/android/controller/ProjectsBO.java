@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.intalio.android.DAO.ProjectsDAO;
-import com.intalio.android.DAO.TasksDAO;
 
 public class ProjectsBO {
 	
