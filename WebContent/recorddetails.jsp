@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="header.jsp" />
+<head>
+	<style type="text/css">
+		td
+		{
+		border-bottom:1px solid #E6E6E6;
+		padding: 5px;
+		}
+	</style>
+</head>
 <body>	 
 	<div data-role="page" data-theme="d">
 	
@@ -14,32 +23,34 @@
 		<div data-role="content">
 			<div id="main">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li>
-						<table id="recordDetails" align="center"></table>
+					<li style="border-width: 0px;">
+						<table id="recordDetails" align="center" style="width:100%;"></table>
 					</li>
 				</ul>				
 			</div>	
 			
 			<div id="specific" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li>
-						<table id="specificDetails" align="center"></table>
+					<li style="border-width: 0px;">
+						<table id="specificDetails" align="center" style="width:100%;"></table>
 					</li>
-				</ul>	
+				</ul>
+				<!-- <ul id="specificDetails" data-role="listview" data-inset=false data-filter="false">
+				</ul> -->
 			</div>	
 			
 			<div id="standard" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li>
-						<table id="standardDetails" align="center"></table>
+					<li style="border-width: 0px;">
+						<table id="standardDetails" align="center" style="width:100%;"></table>
 					</li>
 				</ul>	
 			</div>	
 			
 			<div id="related" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li>	
-						<table id="relatedDetails" align="center"></table>
+					<li style="border-width: 0px;">	
+						<table id="relatedDetails" align="center" style="width:100%;"></table>
 					</li>
 				</ul>	
 			</div>	
@@ -56,8 +67,7 @@
 					<li><a href="#">Options</a></li>
 				</ul>
 			</div>
-		</div>	
-		
+		</div>		
 		
 		<script type="text/javascript" src="js/recordDetails.js"></script>
 		<script type="text/javascript">
