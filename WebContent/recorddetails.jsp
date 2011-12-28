@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="header.jsp" />
-<head>
-	<style type="text/css">
-		td
-		{
-		border-bottom:1px solid #E6E6E6;
-		padding: 5px;
-		}
-	</style>
-</head>
+<style type="text/css">
+	td
+	{
+	border-bottom:1px solid #E6E6E6;
+	padding: 5px;
+	}
+</style>
 <body>	 
 	<div data-role="page" data-theme="d">
 	
@@ -60,11 +58,11 @@
 		<div data-role="footer" data-position="fixed" >
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#" onclick="javascript:window.location.href='home.jsp'">Home</a></li>
+					<li><a href="#" onclick="javascript:window.location.href='home.jsp'"><img src ="images/home.png" /></a></a></li>
 					<li><a href="#" onclick="showDiv('specific')">Specific Fields</a></li>
 					<li><a href="#" onclick="showDiv('standard')">Standard Fields</a></li>
 					<li><a href="#" onclick="showDiv('related')">Related Lists</a></li>
-					<li><a href="#">Options</a></li>
+					<li><a href="#"><img src ="images/option.png" /></a></a></li>
 				</ul>
 			</div>
 		</div>		

@@ -9,7 +9,7 @@ function enableActiveTab(tab){
 
 
 function appendCount(){
-	var url = './data.json';	
+	/*var url = './data.json';	
 	url = url + '?action=' + 'count' + '&subaction=getcount';
 	$.ajax({
 		  url: url,
@@ -25,5 +25,5 @@ function appendCount(){
 			  $("#eventCount").empty();
 			  $("#eventCount").append(' (' + data.count[0].events + ')');
 		  }
-		});
+		});*/
 }
