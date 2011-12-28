@@ -58,11 +58,11 @@
 		<div data-role="footer" data-position="fixed" >
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#" onclick="javascript:window.location.href='home.jsp'"><img src ="images/home.png" /></a></a></li>
+					<li><a href="#" onclick="javascript:window.location.href='home.jsp'"><img src ="images/home.png" style="height:32px; width:32px" /></a></a></li>
 					<li><a href="#" onclick="showDiv('specific')">Specific Fields</a></li>
 					<li><a href="#" onclick="showDiv('standard')">Standard Fields</a></li>
 					<li><a href="#" onclick="showDiv('related')">Related Lists</a></li>
-					<li><a href="#"><img src ="images/option.png" /></a></a></li>
+					<li><a href="#"><img src ="images/option.png" style="height:32px; width:32px" /></a></a></li>
 				</ul>
 			</div>
 		</div>		

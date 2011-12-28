@@ -1,105 +1,36 @@
-#io-dashboard-view-scroll-view {
-background-image: url('/document/42fa36da-e828-4524-ae50-9cf511d1c851/latest');
-position: absolute;
-top: 40px;
-right: 0px;
-bottom: 0px;
-left: 0px;
-}
-#io-dashboard-view-scroll-view > .io-dashboard-view {
-top: 0;
-bottom: 0;
-}
-#io-dashboard-view-scroll-view > .io-dashboard-view > .io-paper {
-top: 0;
-bottom: 0;
-padding: 0;
-}
-#io-dashboard-roll-scroll {
-overflow-x: auto;
-overflow-y: hidden;
-height: 150px;
-width: 100%;
-/* border-bottom: thin solid #ccc; */
-}
-#io-dashboard-roll {
-width: 100%;
-height: 100%;
-position: relative;
-}
-.io-dashboard-roll-dashlet {
-position: relative;
-display: inline-block;
-width: 250px;
-height: 100%;
-/* border-right: thin solid #ccc; */
-overflow: hidden;
-}
-#io-dashboard-grid {
-position: relative;
-clear: both;
-width: 100%;
-overflow: hidden;
-}
-.io-dashboard-grid-dashlet {
-position: relative;
-float: left;
-height: 240px;
-/* border-right: thin solid #ccc;
-border-bottom: thin solid #ccc; */
-overflow-x: hidden;
-overflow-y: auto;
-}
-#io-dashboard-roll-dashlet-empty, #io-dashboard-grid-dashlet-empty {
-left: 0;
-top: 0;
-line-height: 150px;
-}
-.io-dashboard-grid-dashlet * {
-text-overflow: ellipsis;
-white-space: nowrap;
-}
-.io-tracking-dashlet {
-    display: block;
-    height: 100%;
-    left: 0;
+.io-tracking-dashlet-name > a{
     position: absolute;
-    top: 0;
-    width: 100%;
+    color: #1F77B4;
+    left : 40%;
+    top: 5px;
 }
-.io-dashlet-tracking-health-green {
-    
-    background-image: URL("../images/latest.png");
-    background-origin: padding-box;
-    background-repeat: no-repeat;
-    height: 32px;
-    margin-bottom: 5px;
-    margin-left : 30px;
-    margin-top : 20px;
-}
-.io-tracking-dashlet-name > a {
-    position: absolute;
-    color: #1F77B8;
-    margin-left : 30px;
-    margin-top: -20px;
-}
-.io-dashlet-tracking-value1 {
-	position: absolute;
-	text-align: left;
-    margin-top: 10px;
-    left : 120px;
-    
- 
+.io-dashlet-tracking-target {
+	color: #AAAAAA;
+    font-size: 0.8em;
+    font-weight: lighter;
+    margin-top: -0.5em;
+    right: 0;
+    text-align: right;
+    top: 80%;
 }
 .io-dashlet-tracking-value {
-	 position: absolute;
+	left: auto;
+    margin-top: -1.0em;
+    right: 0;
+    text-align: right;
+    top: 50%;
     color: #CCCCCC;
-    left : 120px;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
-    margin-top: -35px;
-    text-align: left;
-    
+}
+.io-dashlet-tracking-prefix {
+    font-size: 0.3em;
+    font-weight: lighter;
+    vertical-align: 166%;
+}
+.io-dashlet-tracking-suffix {
+    font-size: 0.3em;
+    font-weight: lighter;
 }
 .io-dashlet-tracking-change-good {
 	position: absolute;
@@ -109,7 +40,16 @@ white-space: nowrap;
     margin-bottom: 5px;
     margin-left: 30px;
     text-align: center;
-    vertical-align: left;
+    vertical-align: left; 
+}
+.io-dashlet-tracking-health-green {
+    background-image: URL("../images/latest.png");
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    height: 32px;
+    margin-bottom: 5px;
+    margin-left : 30px;
+    margin-top : 30px; 
 }
 .io-dashlet-tracking-health-yellow {
     background-image: url("../images/exclaimation.png");
@@ -127,27 +67,17 @@ white-space: nowrap;
     height: 32px;
     margin-bottom: 5px;
     margin-left : 30px;
-    margin-top : 20px;
+    margin-top : 20px; 
 }
 
-.io-dashlet-icon-img {
-  
-    background-image: url("../images/stream.png");
-    background-origin: padding-box;
-    background-repeat: no-repeat;
-    margin-bottom: 5px;
-    margin-left : 30px;
-    margin-top : 20px;
-
+element.style {
+    display: inline-block;
+    height: 25px;
+    vertical-align: top;
+    width: 75px;
 }
-
-.io-dashboard-grid-dashlet {
-    float: left;
-    margin-left : 10px;
-    margin-top : 10px;
-    margin-bottom : 10px;
-    margin-right : 10px;
-    height: 150px;
-    position: relative;
-    background-color: #FFF;
+.io-dashlet-tracking-chart {
+    margin-top: -22.5px;
+    top: 80%;
+    width: 100px;
 }
