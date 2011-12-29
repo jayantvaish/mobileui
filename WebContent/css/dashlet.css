@@ -69,15 +69,3 @@
     margin-left : 30px;
     margin-top : 20px; 
 }
-
-element.style {
-    display: inline-block;
-    height: 25px;
-    vertical-align: top;
-    width: 75px;
-}
-.io-dashlet-tracking-chart {
-    margin-top: -22.5px;
-    top: 80%;
-    width: 100px;
-}

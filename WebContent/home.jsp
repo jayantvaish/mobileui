@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="header.jsp" />
+<style type="text/css">
+	td
+	{
+	padding: 5px;
+	}
+</style>
 <link rel='stylesheet' type='text/css' href='css/dashlet.css'/> 
 <body>
 	<div data-role="page"  data-theme="d">
-	
-	 	<div data-role="content">	
-	 		
-	 		<div style="height:50%;">
-				<ul data-role="listview" data-inset="false" data-filter="false">
-					
-				</ul>
-			</div>
-			
-			<div style="top:50%;">
+		<div data-role="content">
+			<table>
+				<tr>
+					<td><img src="images/stream.png" style="height:32px; width:32px;" /></td><td>Notification1</td><td style="color:grey;">by Ismael Ghalimi</td>
+				</tr>
+				<tr>
+					<td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification2</td><td style="color:grey;">by Ismael Ghalimi</td>
+				</tr>
+				<tr>
+					<td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification3</td><td style="color:grey;">by Ismael Ghalimi</td>
+				</tr>
+			</table>
+			<!-- <ul data-role="listview" data-inset="false" data-filter="false">
+				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification1</td><td>by Ismael Ghalimi</td></li>
+				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td>Notification2</li>
+				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td>Notification3</li>
+			</ul> -->
+		</div>
+	 	<div data-role="content" style="margin-top:5%">				
+			<div>
 				<ul data-role="listview" data-inset="false" data-filter="false">
 					<li>
 						<div style="height:80px">
@@ -41,10 +57,9 @@
 							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+7%</div>
 							</div>
 							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
-							354
-							<span class="io-dashlet-tracking-suffix">K</span>
+							59
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 100%</div>				
+							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 75</div>				
 						</div>
 					</li>
 					<li>	
@@ -54,10 +69,11 @@
 							</div>
 							<div class="io-dashlet-tracking-health-yellow" title="WebSite traffic below target">&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+7%</div>
+							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+13%</div>
 							</div>
 							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
-							59
+							354
+							<span class="io-dashlet-tracking-suffix">K</span>							
 							</div>
 							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 500K</div>				
 						</div>
@@ -86,7 +102,7 @@
 							</div>
 							<div class="io-dashlet-tracking-health-green" title="NYSE:VMW">&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">  --</div>
+							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">++2.41%</div>
 							</div>
 							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
 							85
