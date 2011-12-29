@@ -2,8 +2,7 @@
 <html>
 <jsp:include page="header.jsp" />
 <style type="text/css">
-	td
-	{
+	td	{
 	padding: 5px;
 	}
 </style>
