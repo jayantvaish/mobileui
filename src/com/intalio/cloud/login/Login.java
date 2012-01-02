@@ -13,10 +13,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
-
+/**
+ * This class receives login input from jsp page and post data to
+ * cloud handler, based on it's response it authenticate it and send 
+ * response in form of json.
+ *
+ */
 public class Login extends HttpServlet {
 	
 	private Logger log = Logger.getLogger(this.getClass());
@@ -44,8 +50,11 @@ public class Login extends HttpServlet {
 			}
 	    }
 	    else {
-	    	try {
+	    	try {		    	   
 				out.println(new JSONObject("{result:success}"));
+				// Valid login. Make a note in the session object.
+	    	    HttpSession session = req.getSession();
+	    	    session.setAttribute("username", username);				
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -58,6 +67,7 @@ public class Login extends HttpServlet {
 		  log.info("Password is: " + password);
 		  
 		  boolean allowUser = false;
+		  StringBuilder result = new StringBuilder();		    
 		  
 		  try {
 			    // Construct data
@@ -76,10 +86,11 @@ public class Login extends HttpServlet {
 			    // Get the response
 			    rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			    String line;
-			    StringBuilder result = new StringBuilder();
 			    while ((line = rd.readLine()) != null) {
 			    	result.append(line);
-			    }	
+			    }
+			    
+			    // Authentication
 			    log.info("Result: " + result.toString());		    	
 			    JSONObject jsonResult = new JSONObject(result.toString());
 			    String loginResult = (String) jsonResult.opt("result");
@@ -87,7 +98,8 @@ public class Login extends HttpServlet {
 			    	allowUser = true;
 			    }
 			} catch (Exception e) {
-				e.printStackTrace();
+				log.warn("Response is: " + result.toString());
+				log.warn(e.getMessage());
 			} finally{
 				if(wr != null){
 					wr.close();
