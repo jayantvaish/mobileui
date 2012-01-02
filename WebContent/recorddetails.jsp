@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<%@ page language="java"%>
-<%
-   String username =(String) session.getAttribute("username");
-   if(username==null){
-   	response.sendRedirect("login.jsp");
-   }
-%>
 <html>
 <jsp:include page="header.jsp" />
 <style type="text/css">
