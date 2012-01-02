@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page language="java" %>
+<%@ page language="java"%>
 <%
    String username =(String) session.getAttribute("username");
    if(username==null){
@@ -77,7 +77,7 @@
 		<script type="text/javascript" src="js/recordDetails.js"></script>
 		<script type="text/javascript">
 			$(document).bind("pagebeforechange", showRecordDetails());
-			$.fixedToolbars.setTouchToggleEnabled(false);
+			//$.fixedToolbars.setTouchToggleEnabled(false);
 			function showDiv(div){
 				//alert(div);
 				hideDiv();
