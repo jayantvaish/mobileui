@@ -27,6 +27,9 @@
 				<tr>
 					<td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification3</td><td style="color:grey;">by Ismael Ghalimi</td>
 				</tr>
+				<tr>
+					<td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification4</td><td style="color:grey;">by Ismael Ghalimi</td>
+				</tr>
 			</table>
 			<!-- <ul data-role="listview" data-inset="false" data-filter="false">
 				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification1</td><td>by Ismael Ghalimi</td></li>
