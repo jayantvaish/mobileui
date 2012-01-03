@@ -17,7 +17,6 @@ public class QuotesBO {
 	private QuotesDAO quotesDAO;
 
 	public QuotesDAO getQuotesDAO() {
-		System.out.println("Third");
 		return quotesDAO;
 	}
 

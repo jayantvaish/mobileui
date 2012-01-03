@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 /**
@@ -13,14 +14,16 @@ import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
  */
 
 public class QuotesDAO extends SqlMapClientDaoSupport {
+	private Logger log = Logger.getLogger(this.getClass());
+	
 	public List getQuotes(int offset, int limit) {
-		System.out.println("Fourth");
+		log.debug("Fourth");
 		int rowsfrom = offset - 1;
 		int rowsto = limit - rowsfrom;
 		Map QueryData = new HashMap();
 		QueryData.put("startFrom", rowsfrom);
 		QueryData.put("upto", rowsto);
-		System.out.println(super.getSqlMapClientTemplate().queryForList(
+		log.debug(super.getSqlMapClientTemplate().queryForList(
 				"getQuotes", QueryData));
 		return super.getSqlMapClientTemplate().queryForList("getQuotes",
 				QueryData);
