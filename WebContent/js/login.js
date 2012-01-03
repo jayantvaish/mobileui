@@ -39,13 +39,14 @@ function() {
 	});
 
 
-	function process_login() {
+	/*function process_login() {
 		var user = $('#username').val();
 		var passwd = $('#password').val();
 		if (!user || user == '' || !passwd	|| passwd == '') {
 			$('.io-login-box').trigger('shakeBox');
 		} else {
-			var data = $('#login-form').serialize();			
+			var data = $('#login-form').serialize();
+			//alert(data);
 			$.ajax({
 				type : 'POST',
 				url : './loginhandler.do',
@@ -68,9 +69,10 @@ function() {
 
 
 		}
-	}				
+	}	*/			
 
 	$(document).bind('keyup', function(event) {
+		//alert("event.keyCode: " + event.keyCode);
 		if (event.keyCode == '13') {
 			//window.location.href='home.jsp';
 			process_login();
@@ -78,3 +80,35 @@ function() {
 	});
 
 });
+
+function process_login() {
+	var user = $('#username').val();
+	var passwd = $('#password').val();
+	if (!user || user == '' || !passwd	|| passwd == '') {
+		$('.io-login-box').trigger('shakeBox');
+	} else {
+		var data = $('#login-form').serialize();
+		//alert(data);
+		$.ajax({
+			type : 'POST',
+			url : './loginhandler.do',
+			data: data,
+			dataType: 'json',
+			error:function(e){
+				  //alert("Error" + e);
+			},
+			success: function(res){
+				//alert(res.result);
+				if(res.result == "success"){
+					//alert("Login successfull");
+					window.location.href='home.jsp';
+				} else {
+					$('.io-login-box').trigger('shakeBox');
+					console.log('login failed with error: ', res.responseText);
+				}
+			}
+		});
+
+
+	}
+}	

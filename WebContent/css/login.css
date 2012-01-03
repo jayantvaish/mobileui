@@ -1,0 +1,58 @@
+	.io-login-box {
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		border-radius: 20px;
+		border: 1px solid #ccc;
+		-moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+		-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+		-moz-transition: opacity 0.25s linear;
+		-webkit-transition: opacity 0.25s linear;
+		transition: opacity 0.25s linear;
+		background-image: url('images/login.jpeg');
+		height: 320px;
+		width: 320px;
+		margin-left: -160px;
+		margin-top: -200px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		text-align: center;
+	}
+	
+	.io-login-box-logo {
+		height: 60px;
+		margin-bottom: 20px;
+		margin-top: 60px;
+		text-align: center;
+	}
+	
+	
+	
+	.io-login-form-input {
+		margin-bottom: 30px;
+	}
+	
+	.io-login-form-input input {
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		-moz-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+		-webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+		border: none;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 18px;
+		height: 40px;
+		width: 240px;
+		padding: 0px 10px;
+		position: relative;
+		background-color: #F0F0F0;
+		z-index: 0;
+	}
+	
+	.io-login-logo {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}

@@ -73,6 +73,7 @@
 
 				<form action="login" id='login-form'
 					method="post">
+				<!-- <div id="login-form"> -->
 					<div style='display: none'>
 						<input id="info" name="info" value="eyJjbGllbnRfbmFtZSI6IiIsImNsaWVudF9pZCI6IjRlZjgwM2Y2MTIwYmE5YWNiNDk3ZmZjNCIsInJlZGlyZWN0X3VyaSI6Imh0dHA6Ly9wbGF0aW51bS5jbG91ZC5pbnRhbGlvLmNvbS9vYXV0aCIsInN0YXRlIjoiIiwicmVzcG9uc2VfdHlwZSI6InRva2VuIiwibGFuZyI6IiIsInVzZXJuYW1lIjoiIiwibm90aWNlX21lc3NhZ2UiOiIifQ==" />
 					</div>
@@ -86,9 +87,10 @@
 					<div class='io-login-form-input' align="center">
 						<input id='password' name="password" type='password'
 							spellcheck='false' placeholder="Password"></input>
-					</div>
+					</div>					
+				<!-- </div> -->
 				</form>
-
+				<button onclick='process_login()'>Login</button>
 			</div>
 
 		</div>

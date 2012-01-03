@@ -24,5 +24,5 @@ define "mobile" do
     compile.from('src').into('./WebContent/WEB-INF/classes').with libs
     resources.filter.using "version" => VERSION_NUMBER
     system("cp -rfv ./src/*.xml  ./WebContent/WEB-INF/classes")
-    package(:war).with(:libs => libs).include('./WebContent/WEB-INF').include('./WebContent/images').include('./WebContent/js').include('./WebContent/*.jsp')
+    package(:war).with(:libs => libs).include('./WebContent/WEB-INF').include('./WebContent/images').include('./WebContent/js').include('./WebContent/*.jsp').include('./WebContent/css')
 end

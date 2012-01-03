@@ -13,7 +13,7 @@
 	
 	
 		<div data-role="header" data-theme='b'> 
-			<a data-rel="back" data-icon="back">Back</a>
+			<!-- <a data-rel="back" data-icon="back">Back</a> -->
 			<h1 id='recordName'></h1>
 			<!-- <a href="#">Edit</a> -->
 		</div>	
