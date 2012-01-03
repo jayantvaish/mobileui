@@ -108,7 +108,7 @@ public class Login extends HttpServlet {
 					rd.close();
 				}
 			}
-		  
+		  	log.debug("allowUser: " + allowUser);
 	    return allowUser;
 	  }
 	}

@@ -38,18 +38,19 @@ public class SessionFilter implements Filter {
             allowedRequest = true;
         }*/
         
-        if(url.equals("/login.jsp")){
-        	allowedRequest = true;
-        }
-        log.debug("allowedRequest is: " + allowedRequest);
-        if (!allowedRequest) {
-            HttpSession session = request.getSession();
-            String username = (String) session.getAttribute("username");
-            if (username == null) {
-                response.sendRedirect("login.jsp");
+        if(url.contains(".jsp")){        	
+        	if(url.contains("login.jsp")){
+            	allowedRequest = true;
+        	}        	
+        	log.debug("allowedRequest is: " + allowedRequest);
+            if (!allowedRequest) {
+                HttpSession session = request.getSession();
+                String username = (String) session.getAttribute("username");
+                if (username == null) {
+                    response.sendRedirect("login.jsp");
+                }
             }
-        }
-        
+        }        
         chain.doFilter(req, res);
     }
  
