@@ -7,6 +7,9 @@
 	border-bottom:1px solid #E6E6E6;
 	padding: 5px;
 	}
+	h2 {
+        text-align: center;
+    }
 </style>
 <body>	 
 	<div data-role="page" data-theme="d">
@@ -14,7 +17,9 @@
 	
 		<div data-role="header" data-theme='b'> 
 			<!-- <a data-rel="back" data-icon="back">Back</a> -->
-			<h1 id='recordName'></h1>
+			<div style='margin-top: -0.5em; margin-bottom: -0.5em;'>
+				<h2 id='recordName'></h2>
+			</div>
 			<!-- <a href="#">Edit</a> -->
 		</div>	
 		
