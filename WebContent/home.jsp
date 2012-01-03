@@ -140,7 +140,8 @@
 					<li><a id="home" class="ui-btn-active" href="#" onclick="javascript:window.location.href='home.jsp'"><img src ="images/home.png" style="height:32px; width:32px" /></a></li>
 					<li><a id="applications" href="#" onclick="javascript:window.location.href='applications.jsp'"><img src ="images/application.png" style="height:32px; width:32px" /></a></li>
 					<li><a id="tasks" href="#" onclick="listRecords('tasks')"><img src ="images/tasks.png" style="height:32px; width:32px" /><span id="taskCount"></span></a></li>
-					<li><a href="#" onclick="listRecords('events')"><img src ="images/events.png" style="height:32px; width:32px" /><span id="eventCount"></span></a></li>
+					<!-- <li><a href="#" onclick="listRecords('events')"><img src ="images/events.png" style="height:32px; width:32px" /><span id="eventCount"></span></a></li> -->
+					<li><a id="applications" href="#" onclick="javascript:window.location.href='taskcalenderview.jsp'"><img src ="images/events.png" style="height:32px; width:32px" /></a></li>
 					<li><a href="#"><img src ="images/option.png" style="height:32px; width:32px" /></a></li>
 				</ul>
 			</div>
