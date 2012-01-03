@@ -38,12 +38,10 @@ public class SessionFilter implements Filter {
             allowedRequest = true;
         }*/
         
-        if(url.contains(".jsp")){        	
-        	if(url.contains("login.jsp")){
-            	allowedRequest = true;
-        	}        	
-        	log.debug("allowedRequest is: " + allowedRequest);
-            if (!allowedRequest) {
+        if(url.contains("login.jsp")){
+        	allowedRequest = true;
+    	}else if(url.contains(".jsp")){          	        	
+        	if (!allowedRequest) {
                 HttpSession session = request.getSession();
                 String username = (String) session.getAttribute("username");
                 if (username == null) {
