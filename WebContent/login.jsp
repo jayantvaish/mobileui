@@ -71,7 +71,7 @@
 					<img src='images/logo.png' height='60px' width='150px' title='Intalio Logo' />
 				</div>
 
-				<form action="login" id='login-form'method="post" style="position:relative">
+				<form id='login-form'method="post" style="position:relative">
 					
 					<div style="color: #FFFFFF !important;position: relative">
 						<label id='notice_message'></label>
