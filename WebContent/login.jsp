@@ -14,18 +14,19 @@
 		-webkit-transition: opacity 0.25s linear;
 		transition: opacity 0.25s linear;
 		background-image: url('images/login.jpeg');
-		height: 320px;
-		width: 320px;
-		margin-left: -160px;
-		margin-top: -200px;
+		margin-left: -130px;
+		margin-top:-130px;
+		height: 170px;
+		width: 250px;
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		text-align: center;
+		align: center;
 	}
 	
 	.io-login-box-logo {
-		height: 60px;
+		height:200px;
+		width : 220px;
 		margin-bottom: 20px;
 		margin-top: 60px;
 		text-align: center;
@@ -38,19 +39,18 @@
 	}
 	
 	.io-login-form-input input {
-		-moz-border-radius: 10px;
+		-moz-border-radius: 5px;
 		-webkit-border-radius: 10px;
-		border-radius: 10px;
+		border-radius: 15px;
 		-moz-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
 		-webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
 		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
 		border: none;
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-size: 18px;
-		height: 40px;
-		width: 240px;
+		font-size: 14px;
+		height: 30px;
+		width: 200px;
 		padding: 0px 10px;
-		position: relative;
 		background-color: #F0F0F0;
 		z-index: 0;
 	}
@@ -65,35 +65,34 @@
 	<div data-role="page" style="background-image: url(images/background.jpg); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		overflow-x: hidden;	overflow-y: hidden;	margin: 0;	padding: 0;	text-rendering: optimizelegibility;">
 		
-		<div data-role="content">
+		 <div data-role="content"> 
 			<div id='loginBox' class='io-login-box'>
-				<div class='io-login-box-logo'>
-					<img src='images/logo.png' height='60' width='200' title='Intalio Logo' />
+				<div   style="position:relative ;margin-top:10px; margin-left:45px">
+					<img src='images/logo.png' height='60px' width='150px' title='Intalio Logo' />
 				</div>
 
-				<form action="login" id='login-form'
-					method="post">
-				<!-- <div id="login-form"> -->
-					<div style='display: none'>
-						<input id="info" name="info" value="eyJjbGllbnRfbmFtZSI6IiIsImNsaWVudF9pZCI6IjRlZjgwM2Y2MTIwYmE5YWNiNDk3ZmZjNCIsInJlZGlyZWN0X3VyaSI6Imh0dHA6Ly9wbGF0aW51bS5jbG91ZC5pbnRhbGlvLmNvbS9vYXV0aCIsInN0YXRlIjoiIiwicmVzcG9uc2VfdHlwZSI6InRva2VuIiwibGFuZyI6IiIsInVzZXJuYW1lIjoiIiwibm90aWNlX21lc3NhZ2UiOiIifQ==" />
-					</div>
-					<div style='height: 40px; color: #FFFFFF !important;'>
+				<form action="login" id='login-form'method="post" style="position:relative">
+					
+					<div style="color: #FFFFFF !important;position: relative">
 						<label id='notice_message'></label>
 					</div>
-					<div class='io-login-form-input' align="center">
+					<div class='io-login-form-input'style="position:relative; margin-right:10px; margin-top:10px; margin-left:10px">
 						<input id='username' name="username" type='text' value=''
 							spellcheck='false' placeholder="Username"></input>
 					</div>
-					<div class='io-login-form-input' align="center">
+					<div class='io-login-form-input'style="position:relative; margin-right:10px; margin-top:-20px; margin-left:10px">
 						<input id='password' name="password" type='password'
 							spellcheck='false' placeholder="Password"></input>
-					</div>					
-				<!-- </div> -->
+					</div>	
+					<div style="display: none">
+						<input id="info" name="info" value="eyJjbGllbnRfbmFtZSI6IiIsImNsaWVudF9pZCI6IjRlZjgwM2Y2MTIwYmE5YWNiNDk3ZmZjNCIsInJlZGlyZWN0X3VyaSI6Imh0dHA6Ly9wbGF0aW51bS5jbG91ZC5pbnRhbGlvLmNvbS9vYXV0aCIsInN0YXRlIjoiIiwicmVzcG9uc2VfdHlwZSI6InRva2VuIiwibGFuZyI6IiIsInVzZXJuYW1lIjoiIiwibm90aWNlX21lc3NhZ2UiOiIifQ==" />
+					</div>
+					<div class='io-login-form-input'style="position:relative; margin-right:10px; margin-top:-20px; margin-left:10px">				
+					<button class="io-login-form-input" onclick='process_login()'>Login</button>
+					</div>
 				</form>
-				<button onclick='process_login()'>Login</button>
 			</div>
-
-		</div>
+		</div>	
 
 		<script type="text/javascript" src="js/login.js"></script>
 	</div>
