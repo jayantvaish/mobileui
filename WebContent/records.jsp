@@ -13,7 +13,7 @@
 	<jsp:include page="footer.jsp" />
 	
 	<script type="text/javascript" src="js/record.js"></script>
-	<script type="text/javascript" src="js/recordDetails.js"></script>
+	<!-- <script type="text/javascript" src="js/recordDetails.js"></script> -->
 	<!-- <script type="text/javascript" src="js/footer.js"></script> -->
 	<script type="text/javascript">
 		$(document).bind("pagebeforechange", processPage());

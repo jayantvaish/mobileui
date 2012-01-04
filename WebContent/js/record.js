@@ -1,14 +1,3 @@
-/*function getRecords(){
-	//var url='http://192.168.2.102:7070/android/data.json?action=accounts&subaction=getrows&startfrom=1&upto=2';
-	$.getJSON('examples/test.json',function(jsonData){
-		alert("Inside function");
-		$.each(jsonData.accounts,function(i,json){
-			$("#listRecords").append('<li data-theme="d"><a href="#">'+json.name+'</a></li>');
-		});
-		$('ul').listview('refresh');
-	});
-}*/
-
 var length = 20;  //Number of rows to be fetched.
 var limit = 0;
 var objectTask = "tasks";
@@ -64,4 +53,16 @@ function getMoreRecords(object){
 function postObjectAndXid(object, xid){
 	var urlToPost = 'recorddetails.jsp';
 	document.location=urlToPost + '?' + 'object=' + object + '&'  + 'xid=' + xid;
+}
+
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++){
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    //alert("object is: " + vars['object']);
+    return vars;
 }

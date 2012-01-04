@@ -13,10 +13,10 @@ function showRecordDetails(){
 		  async: true,
 		  dataType: 'json',
 		  error:function(e){
-			  //alert("Error" + e);
+			  alert("Error" + e);
 		  },
 		  success: function (data) {
-			  //var id = 0;
+			  //alert("Success");
 			  if(data.data.main[0].Name != undefined) {
 				  $("#recordName").append(data.data.main[0].Name);
 			  } else if(data.data.main[0].Title != undefined){
@@ -25,7 +25,6 @@ function showRecordDetails(){
 			  
 			  
 			  $.each(data.data.main[0], function(key, value) {
-				  //alert(key, + " , " + value);
 				  	if(key != 'XID'){
 				  		$("#recordDetails").append('<tr><td align="right" style="font-size: 12pt; font-weight: normal; color: grey">' + key  + '</td><td style="font-size: 12pt; font-weight: normal; color: #333">' + value + '</td></tr>');		            
 				  	}
@@ -39,13 +38,7 @@ function showRecordDetails(){
 			  
 			  $.each(data.data.specific[0], function(key, value) {
 				   $("#specificDetails").append('<tr><td align="right" style="font-size: 12pt; font-weight: normal; color: grey">' + key  + '</td><td style="font-size: 12pt; font-weight: normal; color: #333">' + value + '</td></tr>');		            
-				  	
-				  /*$("#specificDetails").append('<li data-theme="d" data-icon="false"><a id="' + id + '" href="#"></a></li>');
-				   
-				  $("#" + id).append('<tr><td align="left" style="font-size: 12pt; font-weight: normal; color: grey">' + key  + '</td><td>&nbsp;&nbsp;</td><td style="font-size: 12pt; font-weight: normal; color: #333">' + value + '</td></tr>');
-				  id++;*/
 			  });
-			  //$("#specificDetails").listview('refresh');
 		  
 		  }
 		});

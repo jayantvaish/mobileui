@@ -22,13 +22,13 @@
 		
 		<div data-role="header" data-theme='b'style="position:relative;"> 
 			<!-- <a data-rel="back" data-icon="back">Back</a> -->
-			<div style='margin-top: -0.5em; margin-left: -0.5em; margin-right: -0.5em;'>
+			<div style='margin-top: -0.5em; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: -0.5em;'>
 				<h2 id='recordName'></h2>
 			</div>
 			<!-- <a href="#">Edit</a> -->
 		</div>	
 		
-		<div data-role="content"  style="align:centre;position:relative; overflow:scroll;height: 400px;">
+		<div data-role="content"  style="align:centre;position:relative; overflow:scroll;height: 600px;">
 			<div id="main">
 				<ul data-role="listview" data-inset=false data-filter="false">
 					<li style="border-width: 0px;">
@@ -82,20 +82,20 @@
 		$("body").css('overflow', 'hidden');
 
 
-		$(document).bind("pagechange", showRecordDetails());
-			//$.fixedToolbars.setTouchToggleEnabled(false);
-			function showDiv(div){
-				//alert(div);
-				hideDiv();
-				$('#' + div).show();
-			}
-			
-			function hideDiv(){
-				$('#main').hide();
-				$('#specific').hide();
-				$('#standard').hide();
-				$('#related').hide();
-			}
+		$(document).bind("pagebeforechange", showRecordDetails()); 
+		//$.fixedToolbars.setTouchToggleEnabled(false);
+		function showDiv(div){
+			//alert(div);
+			hideDiv();
+			$('#' + div).show();
+		}
+		
+		function hideDiv(){
+			$('#main').hide();
+			$('#specific').hide();
+			$('#standard').hide();
+			$('#related').hide();
+		}
 		</script>		
 	</div>
 
