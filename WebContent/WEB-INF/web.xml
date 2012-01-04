@@ -29,7 +29,7 @@
    <session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-	
+	<!-- 
 	<filter>
     <filter-name>SessionFilter</filter-name>
     <filter-class>com.intalio.cloud.login.SessionFilter</filter-class>
@@ -41,5 +41,5 @@
 	<filter-mapping>
 	    <filter-name>SessionFilter</filter-name>
 	    <url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 </web-app>
