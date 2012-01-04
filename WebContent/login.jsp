@@ -66,7 +66,7 @@
 							<img src='images/logo.png' height='60px' width='150px' title='Intalio Logo' />
 						</div>
 					</div> 
-				<form id='login-form' method="post" style="postition:fixed; top:50%; left:50% ;">
+				<form id='login-form' action="javascript:function(){}" method="post" style="postition:fixed; top:50%; left:50% ;">
 					
 					<div class='io-login-form-input' style="position:relative; margin-top:-90px; margin-left:40px">
 						<input id='username' name="username" type='text' value=''
