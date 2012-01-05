@@ -21,7 +21,7 @@ function getRecords(object, offset){
 		  },
 		  success: function (data) {	
 			  $.each(data.data,function(i,json){			//onclick="postObjectAndXid(\''+ object +'\',\''+ json.xid +'\')"	
-				   $("#listRecords").append('<li data-theme="d" data-icon="false"><a id="' + json.xid + '" href="javascript:postObjectAndXid(\''+ object +'\',\''+ json.xid +'\')" >'+json.name+'</a></li>');
+				   $("#listRecords").append('<li data-icon="false"><a id="' + json.xid + '" href="javascript:postObjectAndXid(\''+ object +'\',\''+ json.xid +'\')" >'+json.name+'</a></li>');
 				   if(object == objectTask || object == objectEvent){
 					   $.each(data.data[i], function(key, value) {
 						  	//alert(key + " , " + value);
