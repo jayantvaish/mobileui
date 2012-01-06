@@ -29,6 +29,8 @@
 		</div>	
 		
 		<div data-role="content"  style="align:centre;position:relative; overflow:scroll;height: 600px;">
+		<div id="wrapper">
+		<div id="scroller">
 			<div id="main">
 				<ul data-role="listview" data-inset=false data-filter="false">
 					<li style="border-width: 0px;">
@@ -62,6 +64,10 @@
 					</li>
 				</ul>	
 			</div>
+			</div></div>
+			<script type="text/javascript">
+				var myScroll = new iScroll('wrapper');
+			</script>
 		</div>	
 			
 		<div data-role="footer" data-position="fixed"  style="position:fixed; overflow:hidden;top:630px;height:50px;" >

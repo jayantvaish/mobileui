@@ -4,4 +4,13 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-</head> 
+	<script type="application/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+function loaded() {
+	setTimeout(function () {
+		myScroll = new iScroll('wrapper');
+	}, 100);
+}
+window.addEventListener('load', loaded, false);
+</script>
