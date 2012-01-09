@@ -99,14 +99,14 @@ function process_login() {
 			},
 			success: function(res){
 				//alert(res.result);
-				window.location.href='home.jsp';
-				/*if(res.result == "success"){
+				//window.location.href='home.jsp';
+				if(res.result == "success"){
 					//alert("Login successfull");
 					window.location.href='home.jsp';
 				} else {
 					$('.io-login-box').trigger('shakeBox');
 					console.log('login failed with error: ', res.responseText);
-				}*/
+				}
 			}
 		});
 
