@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="header.jsp" />
-<style type="text/css">
-	td	{
-	padding: 5px;
-	}
-</style>
 <link rel='stylesheet' type='text/css' href='css/dashlet.css'/> 
 <body>
 	<div data-role="page"  data-theme="d" data-iscroll="enable">

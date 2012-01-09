@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="header.jsp" />
-<style type="text/css">
-	td
-	{
-	border-bottom:1px solid #E6E6E6;
-	padding: 5px;
-	}
-	h2 {
-        text-align: center; 
-    }
-</style>
+<link rel='stylesheet' type='text/css' href='css/recorddetails.css'/> 
 <body>
 	<div data-role="page" data-theme="d" data-iscroll="enable">
 		
@@ -27,33 +18,31 @@
 			<div id="main">
 				<ul data-role="listview" data-inset=false data-filter="false">
 					<li style="border-width: 0px;">
-						<table id="recordDetails" align="center" style="align:centre;width:100%;"></table>
+						<table id="recordDetails"></table>
 					</li>
 				</ul>				
 			</div>	
 			
 			<div id="specific" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li style="border-width: 0px;align:centre;">
-						<table id="specificDetails" align="center" style="align:centre;width:100%;"></table>
+					<li style="border-width: 0px;">
+						<table id="specificDetails"></table>
 					</li>
 				</ul>
-				<!-- <ul id="specificDetails" data-role="listview" data-inset=false data-filter="false">
-				</ul> -->
 			</div>	
 			
 			<div id="standard" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li style="border-width: 0px;align:centre;">
-						<table id="standardDetails" align="center" style="align:centre;width:100%;"></table>
+					<li style="border-width: 0px;">
+						<table id="standardDetails"></table>
 					</li>
 				</ul>	
 			</div>	
 			
 			<div id="related" style="display:none;">
 				<ul data-role="listview" data-inset=false data-filter="false">
-					<li style="border-width: 0px;align:centre;">	
-						<table id="relatedDetails" align="center" style="align:centre;width:100%;"></table>
+					<li style="border-width: 0px;">	
+						<table id="relatedDetails"></table>
 					</li>
 				</ul>	
 			</div>
@@ -74,12 +63,8 @@
 		
 		<script type="text/javascript" src="js/recordDetails.js"></script>
 		<script type="text/javascript">
-		$("html").css("overflow", "hidden");
-		$("body").css('overflow', 'hidden');
-
-
 		$(document).bind("pagebeforechange", showRecordDetails()); 
-		//$.fixedToolbars.setTouchToggleEnabled(false);
+		
 		function showDiv(div){
 			//alert(div);
 			hideDiv();
