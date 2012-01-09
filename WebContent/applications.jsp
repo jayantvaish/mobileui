@@ -2,17 +2,15 @@
 <html> 
 <jsp:include page="header.jsp" />
 <body> 
-<div data-role="page" data-theme="d">
+<div data-role="page" data-theme="d" data-iscroll="enable">
+	<div data-role="header"></div>
 	<div id="listObjects" data-role="content">	
-		
+		<div data-iscroll="scroller">	
 		<div id="objectList" data-role="collapsible-set">    
 		               
 	    	<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Activities</h3>		
-				<ul data-role="listview" data-inset="false">			                
-				
-					<!-- <li data-theme="c">Activities</li> -->
-					
+				<ul data-role="listview" data-inset="false">					
 					<li>
 						<a href="javascript:listRecords('events')">
 							<img class="ui-li-icon" src="images/events.png" width="16px" height="11px" >Events<span id="events" class="ui-li-count">0</span>
@@ -32,8 +30,7 @@
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Processes</h3>		
-				<ul data-role="listview" data-inset="false">						
-					<!-- <li data-theme="c">Processes</li> -->
+				<ul data-role="listview" data-inset="false">
 					<li>
 						<a href="javascript:listRecords('businessprocess')">
 							<img class="ui-li-icon" src="images/business_processes.png" width="16px" height="11px" >Business Processes<span id="businessprocess" class="ui-li-count">0</span>
@@ -47,8 +44,7 @@
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Contents</h3>		
-				<ul data-role="listview" data-inset="false">		
-					<!-- <li data-theme="c">Contents</li> -->
+				<ul data-role="listview" data-inset="false">
 					<li>
 						<a href="javascript:listRecords('folders')">
 							<img class="ui-li-icon" src="images/folders.png" width="16px" height="11px" >Folders<span id="folders" class="ui-li-count">0</span>
@@ -69,17 +65,12 @@
 						<a href="javascript:listRecords('pages')">
 							<img class="ui-li-icon" src="images/pages.png" width="16px" height="11px" >Pages<span id="pages" class="ui-li-count">0</span>
 						</a></li>
-					<!-- <li>
-						<a href="javascript:listRecords('layouts')">
-							<img class="ui-li-icon" src="images/layouts.png" width="16px" height="11px" >Layouts<span id="layouts" class="ui-li-count">0</span>
-						</a></li> -->
 				</ul>
 			</div>
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Marketing</h3>		
-				<ul data-role="listview" data-inset="false">			
-					<!-- <li data-theme="c">Marketing</li> -->
+				<ul data-role="listview" data-inset="false">
 					<li>
 						<a href="javascript:listRecords('marketinglists')">
 							<img class="ui-li-icon" src="images/marketing_lists.png" width="16px" height="11px" >Marketing Lists<span id="marketinglists" class="ui-li-count">0</span>
@@ -93,8 +84,7 @@
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Sales</h3>		
-				<ul data-role="listview" data-inset="false">			
-					<!-- <li data-theme="c">Sales</li> -->
+				<ul data-role="listview" data-inset="false">
 					<li>
 						<a href="javascript:listRecords('leads')">
 							<img class="ui-li-icon" src="images/leads.png" width="16px" height="11px" >Leads<span id="leads" class="ui-li-count">0</span>
@@ -132,8 +122,7 @@
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Support</h3>		
-				<ul data-role="listview" data-inset="false">			
-					<!-- <li data-theme="c">Support</li> -->
+				<ul data-role="listview" data-inset="false">
 					<li>
 						<a href="javascript:listRecords('assets')">
 							<img class="ui-li-icon" src="images/assets.png" width="16px" height="11px" >Assets<span id="assets" class="ui-li-count">0</span>
@@ -151,48 +140,15 @@
 			
 			<div id="resultsContainer" data-role="collapsible" data-collapsed="true">
 	         <h3>Performance</h3>		
-				<ul data-role="listview" data-inset="false">			
-					<!-- <li data-theme="c">Performance</li> -->
+				<ul data-role="listview" data-inset="false">	
 					<li>
 						<a href="javascript:listRecords('reports')">
 							<img class="ui-li-icon" src="images/reports.png" width="16px" height="11px" >Reports<span id="reports" class="ui-li-count">0</span>
 						</a></li>
-					<!-- <li>
-						<a href="javascript:listRecords('charts')">
-							<img class="ui-li-icon" src="images/charts.png" width="16px" height="11px" >Charts<span id="charts" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('charttypes')">
-							<img class="ui-li-icon" src="images/chart_types.png" width="16px" height="11px" >Chart Types<span id="charttypes" class="ui-li-count">0</span>
-						</a></li> -->
 					<li>
 						<a href="javascript:listRecords('trackings')">
 							<img class="ui-li-icon" src="images/trackings.png" width="16px" height="11px" >Trackings<span id="trackings" class="ui-li-count">0</span>
 						</a></li>
-					<!-- <li>
-						<a href="javascript:listRecords('trackingvalue')">
-							<img class="ui-li-icon" src="images/tracking_value.png" width="16px" height="11px" >Tracking Value<span id="trackingvalue" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('trackingfields')">
-							<img class="ui-li-icon" src="images/tracking_fields.png" width="16px" height="11px" >Tracking Fields<span id="trackingfields" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('trackinggroups')">
-							<img class="ui-li-icon" src="images/tracking_groups.png" width="16px" height="11px" >Tracking Groups<span id="trackinggroups" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('trackingpoints')">
-							<img class="ui-li-icon" src="images/tracking_points.png" width="16px" height="11px" >Tracking Points<span id="trackingpoints" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('trackingscheduler')">
-							<img class="ui-li-icon" src="images/tracking_scheduler.png" width="16px" height="11px" >Tracking Scheduler<span id="trackingscheduler" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('timingintervals')">
-							<img class="ui-li-icon" src="images/timing_intervals.png" width="16px" height="11px" >Timing Intervals<span id="timingintervals" class="ui-li-count">0</span>
-						</a></li> -->
 					<li>
 						<a href="javascript:listRecords('keyperformanceindicators')">
 							<img class="ui-li-icon" src="images/key_performance_indicators.png" width="16px" height="11px" >Key Performance Indicators<span id="keyperformanceindicators" class="ui-li-count">0</span>
@@ -201,22 +157,11 @@
 						<a href="javascript:listRecords('servicelevelagreements')">
 							<img class="ui-li-icon" src="images/service_level_agreements.png" width="16px" height="11px" >Service Level Agreements<span id="servicelevelagreements" class="ui-li-count">0</span>
 						</a></li>
-					<!-- <li>
-						<a href="javascript:listRecords('simulationdistributions')">
-							<img class="ui-li-icon" src="images/simulation_distributions.png" width="16px" height="11px" >Simulation Distributions<span id="simulationdistributions" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('simulationsamples')">
-							<img class="ui-li-icon" src="images/simulation_samples.png" width="16px" height="11px" >Simulation Samples<span id="simulationsamples" class="ui-li-count">0</span>
-						</a></li>
-					<li>
-						<a href="javascript:listRecords('simulationscenarios')">
-							<img class="ui-li-icon" src="images/simulation_scenarios.png" width="16px" height="11px" >Simulation Scenarios<span id="simulationscenarios" class="ui-li-count">0</span>
-						</a></li> -->
 				</ul>
 						
 			</div>
 			
+		</div>
 		</div>
 	</div>
 	

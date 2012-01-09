@@ -10,17 +10,11 @@
 	h2 {
         text-align: center; 
     }
-    .io-body
-    {
-    	overflow-x: hidden;
-		overflow-y: hidden;
-    	
-    }
 </style>
-<body class="io-body" style="overflow:hidden;">	 
-	<div data-role="page" data-theme="d" style="overflow:hidden;">
+<body>
+	<div data-role="page" data-theme="d" data-iscroll="enable">
 		
-		<div data-role="header" data-theme='b'style="position:relative;"> 
+		<div data-role="header" data-theme='b'> 
 			<!-- <a data-rel="back" data-icon="back">Back</a> -->
 			<div style='margin-top: -0.5em; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: -0.5em;'>
 				<h2 id='recordName'></h2>
@@ -28,9 +22,8 @@
 			<!-- <a href="#">Edit</a> -->
 		</div>	
 		
-		<div data-role="content"  style="align:centre;position:relative; overflow:scroll;height: 600px;">
-		<div id="wrapper">
-		<div id="scroller">
+		<div data-role="content">
+		<div data-iscroll="scroller">
 			<div id="main">
 				<ul data-role="listview" data-inset=false data-filter="false">
 					<li style="border-width: 0px;">
@@ -64,13 +57,10 @@
 					</li>
 				</ul>	
 			</div>
-			</div></div>
-			<script type="text/javascript">
-				var myScroll = new iScroll('wrapper');
-			</script>
+		</div>
 		</div>	
 			
-		<div data-role="footer" data-position="fixed"  style="position:fixed; overflow:hidden;top:630px;height:50px;" >
+		<div data-role="footer" data-position="fixed" >
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#" onclick="javascript:window.location.href='home.jsp'"><img src ="images/home.png" style="height:32px; width:32px" /></a></a></li>

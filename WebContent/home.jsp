@@ -8,8 +8,11 @@
 </style>
 <link rel='stylesheet' type='text/css' href='css/dashlet.css'/> 
 <body>
-	<div data-role="page"  data-theme="d">
+	<div data-role="page"  data-theme="d" data-iscroll="enable">
+		<div data-role="header"></div>
+			
 		<div data-role="content">
+		<div data-iscroll="scroller">
 			<table>
 				<tr>
 					<td><img src="images/stream.png" style="height:32px; width:32px;" /></td><td>Notification1</td><td style="color:grey;">by Ismael Ghalimi</td>
@@ -24,14 +27,8 @@
 					<td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification4</td><td style="color:grey;">by Ismael Ghalimi</td>
 				</tr>
 			</table>
-			<!-- <ul data-role="listview" data-inset="false" data-filter="false">
-				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td><td>Notification1</td><td>by Ismael Ghalimi</td></li>
-				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td>Notification2</li>
-				<li style="border-width: 0px;"><td><img src="images/stream.png" style="height:32px; width:32px" /></td>Notification3</li>
-			</ul> -->
-		</div>
-	 	<div data-role="content" style="margin-top:5%">				
-			<div>
+
+			<div style="margin-top:5%">
 				<ul data-role="listview" data-inset="false" data-filter="false">
 					<li>
 						<div style="height:80px">
@@ -131,7 +128,7 @@
 					</li>
 				</ul> 
 			</div>
-			
+		</div>
 		</div>		
 		
 		<div data-role="footer" data-position="fixed" >
