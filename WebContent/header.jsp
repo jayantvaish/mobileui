@@ -6,4 +6,11 @@
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 	<script src="js/iscroll.js"></script>
     <script src="js/jquery.mobile.iscroll.js"></script>
+    <!--  Following script is to ignore quirk with the pushState feature because 
+    if you're doing lots of non-ajax linking and going forward/back, things can get strange. -->
+    <script type="text/javascript">
+    $.extend(  $.mobile , {	
+    	/* ajaxEnabled		 : false, */
+    	hashListeningEnabled: false});
+    </script>
 </head>
