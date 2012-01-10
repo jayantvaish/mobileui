@@ -223,9 +223,11 @@ iScroll.prototype = {
 		if (!that.enabled) {
 			return;
 		}
-
-		e.preventDefault();
-		e.stopPropagation();
+		if (e.target.tagName != "INPUT") //This condition added to make search field click-able.
+		{ 	
+			e.preventDefault();
+			e.stopPropagation();
+		}
 		
 		that.scrolling = true;		// This is probably not needed, but may be useful if iScroll is used in conjuction with other frameworks
 
