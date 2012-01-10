@@ -475,7 +475,12 @@ iScroll.prototype = {
 
 		that.moved = true;
 		that.setTransitionTime(runtime || '350ms');
-		that.setPosition(destX, destY);
+		//that.setPosition(destX, destY);
+		//Following "if" will help in removing rubber-band effect.
+		// || that.y < that.maxScrollY
+		if(that.y > 0){
+			that.setPosition(destX, destY);
+		}
 
 		if (runtime==='0' || runtime=='0s' || runtime=='0ms') {
 			that.resetPosition();

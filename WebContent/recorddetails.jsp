@@ -7,9 +7,10 @@
 		
 		<div data-role="header" data-theme='b'> 
 			<!-- <a data-rel="back" data-icon="back">Back</a> -->
-			<div style='margin-top: -0.5em; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: -0.5em;'>
+			<!-- <div style='margin-top: -0.5em; margin-left: 0.5em; margin-right: 0.5em; margin-bottom: -0.5em;'>
 				<h2 id='recordName'></h2>
-			</div>
+			</div> -->
+			<h1 id='recordName'></h1>
 			<!-- <a href="#">Edit</a> -->
 		</div>	
 		

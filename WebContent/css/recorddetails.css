@@ -9,3 +9,5 @@ table{
 	align:centre; 
 	width:100%;
 }
+.ui-header .ui-title { margin-left: 1em; margin-right: 1em; }
+
