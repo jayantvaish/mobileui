@@ -26,97 +26,97 @@
 					<li>
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">Meta-Data Quality</a>
+								<a href="#">Meta-Data Quality</a>
 							</div>
-							<div class="io-dashlet-tracking-health-green" title="Meta-Data Quality above 60%">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-green" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+18%</div>
+							<div class="io-dashlet-tracking-change-good" >+18%</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							72
 							<span class="io-dashlet-tracking-suffix">%</span>
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 100%</div>									
+							<div class="io-dashlet-tracking-target" >TARGET: 100%</div>									
 						</div>					
 					</li>
 					<li>						
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">Network Activity</a>
+								<a href="#">Network Activity</a>
 							</div>							
-							<div class="io-dashlet-tracking-health-green" title="Network Activity above 50">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-green" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+7%</div>
+							<div class="io-dashlet-tracking-change-good" >+7%</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							59
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 75</div>				
+							<div class="io-dashlet-tracking-target" >TARGET: 75</div>				
 						</div>
 					</li>
 					<li>	
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">Website Visits</a>
+								<a href="#">Website Visits</a>
 							</div>
-							<div class="io-dashlet-tracking-health-yellow" title="WebSite traffic below target">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-yellow" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+13%</div>
+							<div class="io-dashlet-tracking-change-good" >+13%</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							354
 							<span class="io-dashlet-tracking-suffix">K</span>							
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 500K</div>				
+							<div class="io-dashlet-tracking-target" >TARGET: 500K</div>				
 						</div>
 					</li>
 					<li>
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">Quarterly Bookings</a>
+								<a href="#">Quarterly Bookings</a>
 							</div>
-							<div class="io-dashlet-tracking-health-green" title="Quarterly bookings above target">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-green" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">+39%</div>
+							<div class="io-dashlet-tracking-change-good" >+39%</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							<span class="io-dashlet-tracking-prefix">$</span>
 							1.7
 							<span class="io-dashlet-tracking-suffix">M</span>
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: $1.5M</div>				
+							<div class="io-dashlet-tracking-target" >TARGET: $1.5M</div>				
 						</div>
 					</li>
 					<li>
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">NYSE:VMW</a>
+								<a href="#">NYSE:VMW</a>
 							</div>
-							<div class="io-dashlet-tracking-health-green" title="NYSE:VMW">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-green" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">++2.41%</div>
+							<div class="io-dashlet-tracking-change-good" >++2.41%</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							85
 							<span class="io-dashlet-tracking-suffix">.00</span>
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 120	</div>				
+							<div class="io-dashlet-tracking-target" >TARGET: 120	</div>				
 						</div>
 					</li>
 					<li>
 						<div style="height:80px">
 							<div class="io-tracking-dashlet-name">
-								<a title="View Tracking’s Details and Edit Configuration" href="#">Project Status</a>
+								<a href="#">Project Status</a>
 							</div>
-							<div class="io-dashlet-tracking-health-red" title="Project status under warning(80%	)">&nbsp;</div>
+							<div class="io-dashlet-tracking-health-red" >&nbsp;</div>
 							<div class="io-dashlet-tracking-change">
-							<div class="io-dashlet-tracking-change-good" title="Change since Yesterday">  --</div>
+							<div class="io-dashlet-tracking-change-good" >  --</div>
 							</div>
-							<div class="io-dashlet-tracking-value" title="View Tracking’s Details and Edit Configuration">
+							<div class="io-dashlet-tracking-value" >
 							0
 							<span class="io-dashlet-tracking-suffix">	</span>
 							</div>
-							<div class="io-dashlet-tracking-target" title="Change Target">TARGET: 120	</div>				
+							<div class="io-dashlet-tracking-target" >TARGET: 120	</div>				
 						</div>
 					</li>
 				</ul> 
