@@ -1,5 +1,3 @@
-<!DOCTYPE html> 
-<html> 
 <jsp:include page="header.jsp" />
 <body> 
 

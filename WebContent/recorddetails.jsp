@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <jsp:include page="header.jsp" />
 <link rel='stylesheet' type='text/css' href='css/recorddetails.css'/> 
 <body>
