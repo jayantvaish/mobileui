@@ -48,29 +48,29 @@
 		z-index: 1;
 	}
 	
-	.io-login-logo {
+	/* .io-login-logo {
 		position: absolute;
 		text-align: center;
 		width: 100%;
-	}
+	} */
 </style>
 <body>
 	<div data-role="page" style="background-image: url(images/background.jpg); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		overflow-x: hidden;	overflow-y: hidden;	margin: 0;	padding: 0;	text-rendering: optimizelegibility;">
 		
 		 <div data-role="content" role="main"> 
-					 <div id='loginBox' class='io-login-box' style=" position:relative; margin-left:20px;">
-						<div   style="position:relative ;margin-top:10px; margin-left:45px">
+					 <div id='loginBox' class='io-login-box' style=" position:relative; left:50%; margin-left:-125px;">
+						<div   style="position:relative ;margin-top:10px; left:50%; margin-left:-75px">
 							<img src='images/logo.png' height='60px' width='150px' title='Intalio Logo' />
 						</div>
 					</div> 
 				<form id='login-form' action="javascript:function(){}" method="post" style="postition:fixed; top:50%; left:50% ;">
 					
-					<div class='io-login-form-input' style="position:relative; margin-top:-90px; margin-left:40px">
+					<div class='io-login-form-input' style="position:relative; margin-top:-90px; left:50%; margin-left:-110px">
 						<input id='username' name="username" type='text' value=''
 							spellcheck='false' placeholder="UserName"></input>
 					</div>
-					<div class='io-login-form-input' style="position:relative; margin-top:-15px; margin-left:40px">
+					<div class='io-login-form-input' style="position:relative; margin-top:-15px; left:50%; margin-left:-110px">
 						<input id='password' name="password" type = "password"
 							spellcheck='false' placeholder="Password"></input>
 					</div>	
